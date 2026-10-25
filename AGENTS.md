@@ -34,6 +34,7 @@ These instructions are layered.
 - **Detection is decoupled.** The detector reads a screen snapshot, never touches the parser or viewport state.
 - **Screen detection is evidence-based.** When changing `src/detect/manifests/`, first capture the relevant bottom-buffer state with `herdr agent read <pane> --source detection --format text` and, when styling or alternate screen behavior matters, `--format ansi`. Decide which visible controls are invariant, which are alternatives, and encode them as explicit AND/OR gates. Do not match whole-pane incidental text, and do not use the user-visible viewport for agent status because users can scroll it.
 - **UI patterns should be reused.** Herdr is a mouse-first TUI. New dialogs, onboarding, settings, and post-update flows should follow the existing UI/UX language and interaction patterns instead of inventing one-off screens. Prefer reusing existing modal/screen structure, affordances, and close actions so the app feels consistent.
+- **Identity is sourced, never asserted.** A machine's identity is its profile id and the entry in the operator's own registry. A display label, a hostname, or a person's name for a session is not an identity, and prose that calls one "the machine" is wrong. When you report where something runs, name the profile id and the registry entry it came from.
 
 ### Multiplicative performance paths
 

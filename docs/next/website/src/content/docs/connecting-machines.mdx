@@ -83,6 +83,8 @@ herdr machine remove <profile-id>
 
 For scripts, add `--json` to `machine list`.
 
+A label is a display name, not an identity. A label that names a person rather than a machine stays a display name: operators often give a session a colleague's name, a nickname, or the name of the role it plays, and that name does not become a hostname, an SSH target, or the machine the work runs on. When you report which machine something runs on, name the profile id and the entry it came from in your own registry.
+
 Renaming changes the displayed label without reconnecting. Disabling keeps the profile for later; removing forgets it. Both disconnect only that machine from the client and leave its remote sessions and agents running, even if the host is unreachable.
 
 Removing or disabling the machine you are viewing returns you to Local. If Local is unavailable, Herdr shows that and retries its connection instead of selecting a different remote machine. With enabled saved machines, the client can remain usable even if Local fails or restarts.
